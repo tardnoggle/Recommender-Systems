@@ -1,50 +1,71 @@
 apply plugin: 'java'
 
-ext.lenskitVersion = '3.0-T3-SNAPSHOT'
+description = 'Assignment 3: User-User CF'
+ext.lenskitVersion = '3.0-T3'
+
+ext.userList = []
+if (project.hasProperty('userId')) {
+    userList = project.userId.split(/,/).toList()
+}
+if (userList.isEmpty()) {
+    userList << 42L
+}
+
+ext.itemList = []
+if (project.hasProperty('itemIds')) {
+    itemList = project.itemIds.split(/,/).toList()
+}
+if (itemList.isEmpty()) {
+    itemList = [260,153,527,588]
+}
+
 
 repositories {
     mavenCentral()
-    maven {
-        url 'https://oss.sonatype.org/content/repositories/snapshots/'
-    }
-
-}
-
-ext.userIds = []
-if (project.hasProperty('userId')) {
-    userIds = project.userId.split(/,/)
 }
 
 dependencies {
-    compile "org.grouplens.lenskit:lenskit-all:$lenskitVersion"
+    compile "org.grouplens.lenskit:lenskit-core:$lenskitVersion"
     runtime "org.grouplens.lenskit:lenskit-cli:$lenskitVersion"
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.hamcrest:hamcrest-library:1.3'
 }
 
-task recommendBasic(type: JavaExec, group: 'run') {
-    description 'Runs the recommender with the basic profile.'
+task recommend(type: JavaExec, group: 'run') {
     classpath sourceSets.main.runtimeClasspath
-    main 'org.lenskit.cli.Main'
+    main 'org.grouplens.lenskit.cli.Main'
+    args '--log-file', file("$buildDir/recommend.log"), '--log-file-level', 'DEBUG'
     args 'recommend'
-    args '-c', 'etc/basic.groovy'
-    args userIds
+    args '-c', file('etc/user-user.groovy')
+    args userList
 }
 
-task recommendWeighted(type: JavaExec, group: 'run') {
-    description 'Runs the recommender with the basic profile.'
+task recommendBlended(type: JavaExec, group: 'run') {
     classpath sourceSets.main.runtimeClasspath
-    main 'org.lenskit.cli.Main'
+    main 'org.grouplens.lenskit.cli.Main'
+    args '--log-file', file("$buildDir/recommend-blended.log"), '--log-file-level', 'DEBUG'
     args 'recommend'
-    args '-c', 'etc/weighted.groovy'
-    args userIds
+    args '-c', file('etc/blended.groovy')
+    args userList
 }
 
-task prepareSubmission(type: Zip) {
-    archiveName = 'cbf-submission.zip'
+task predict(type: JavaExec, group: 'run') {
+    classpath sourceSets.main.runtimeClasspath
+    main 'org.grouplens.lenskit.cli.Main'
+    args '--log-file', file("$buildDir/predict.log"), '--log-file-level', 'DEBUG'
+    args 'predict'
+    args '-c', file('etc/user-user.groovy')
+    if (userList.size() > 0) {
+        args userList.first()
+        args itemList
+    }
+}
+
+task prepareSubmission(type: Zip, group: 'package') {
+    archiveName = 'uu-submission.zip'
     from projectDir
-    into 'cbf-assignment'
+    into 'uu-assignment'
+    include '*.txt', '*.md'
     include 'src/**'
     include 'etc/*/'
     include 'build.gradle'
 }
+
