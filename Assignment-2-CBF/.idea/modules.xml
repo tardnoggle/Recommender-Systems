@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assignment-2-CBF.iml" filepath="$PROJECT_DIR$/.idea/modules/Assignment-2-CBF.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assignment-2-CBF_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Assignment-2-CBF_main.iml" group="Assignment-2-CBF" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Assignment-2-CBF_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Assignment-2-CBF_test.iml" group="Assignment-2-CBF" />
+    </modules>
+  </component>
+</project>

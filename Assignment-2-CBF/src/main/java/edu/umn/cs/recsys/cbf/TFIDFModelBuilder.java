@@ -52,6 +52,9 @@ public class TFIDFModelBuilder implements Provider<TFIDFModel> {
     public TFIDFModel get() {
         // Build a map of tags to numeric IDs.  This lets you convert tags (which are strings)
         // into long IDs that you can use as keys in a tag vector.
+
+
+
         Map<String, Long> tagIds = buildTagIdMap();
         logger.info("Building model for {} tags", tagIds.size());
 
