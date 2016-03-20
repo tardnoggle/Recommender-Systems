@@ -23,25 +23,25 @@ TOP MOVIES BY DAMPED MEAN
 527, Schindler's List (1993), 4.281
 
 TOP MOVIES FOR Star Wars (Simple)
-1210, Star Wars: Episode VI - Return of the Jedi (1983), 0.704
-1196, Star Wars: Episode V - The Empire Strikes Back (1980), 0.7
-1198, Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981), 0.634
-2571, "Matrix, 0.623
-480, Jurassic Park (1993), 0.598
-1, Toy Story (1995), 0.594
-296, Pulp Fiction (1994), 0.59
-356, Forrest Gump (1994), 0.579
-318, "Shawshank Redemption, 0.568
-593, "Silence of the Lambs, 0.561
+858, "Godfather, 0
+1172, Cinema Paradiso (Nuovo cinema Paradiso) (1989), 0
+923, Citizen Kane (1941), 0
+50, "Usual Suspects, 0
+3000, Princess Mononoke (Mononoke-hime) (1997), 0
+7099, Nausicaä of the Valley of the Wind (Kaze no tani no Naushika) (1984), 0
+1178, Paths of Glory (1957), 0
+1248, Touch of Evil (1958), 0
+527, Schindler's List (1993), 0
+1217, Ran (1985), 0
 
 TOP MOVIES FOR Batman Forever (Advanced)
-1210, Star Wars: Episode VI - Return of the Jedi (1983), 0.705
-1196, Star Wars: Episode V - The Empire Strikes Back (1980), 0.701
-1198, Raiders of the Lost Ark (Indiana Jones and the Raiders of the Lost Ark) (1981), 0.635
-2571, "Matrix, 0.624
-480, Jurassic Park (1993), 0.598
-1, Toy Story (1995), 0.595
-296, Pulp Fiction (1994), 0.591
-356, Forrest Gump (1994), 0.58
-318, "Shawshank Redemption, 0.569
-593, "Silence of the Lambs, 0.562
+858, "Godfather, 0
+1172, Cinema Paradiso (Nuovo cinema Paradiso) (1989), 0
+923, Citizen Kane (1941), 0
+50, "Usual Suspects, 0
+3000, Princess Mononoke (Mononoke-hime) (1997), 0
+7099, Nausicaä of the Valley of the Wind (Kaze no tani no Naushika) (1984), 0
+1178, Paths of Glory (1957), 0
+1248, Touch of Evil (1958), 0
+527, Schindler's List (1993), 0
+1217, Ran (1985), 0

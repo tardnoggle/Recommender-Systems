@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef1008db-da13-463d-a22b-ff61c8e767d2" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Assignment-1-NPR/NPR/Assign1/NPR_Main.class" afterPath="$PROJECT_DIR$/out/production/Assignment-1-NPR/NPR/Assign1/NPR_Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Assignment-1-NPR/NPR/Assign1/NPR_Movie.class" afterPath="$PROJECT_DIR$/out/production/Assignment-1-NPR/NPR/Assign1/NPR_Movie.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.csv" afterPath="$PROJECT_DIR$/results.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results.txt" afterPath="$PROJECT_DIR$/results.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NPR/Assign1/NPR_Main.java" afterPath="$PROJECT_DIR$/src/NPR/Assign1/NPR_Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/NPR/Assign1/NPR_Movie.java" afterPath="$PROJECT_DIR$/src/NPR/Assign1/NPR_Movie.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Assignment-2-CBF/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Assignment-2-CBF/.idea/workspace.xml" />
     </list>
     <ignored path="Assignment-1-NPR.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,8 +40,8 @@
       <file leaf-file-name="NPR_Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NPR/Assign1/NPR_Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="197" column="54" selection-start-line="197" selection-start-column="54" selection-end-line="197" selection-end-column="54" />
+            <state relative-caret-position="359">
+              <caret line="210" column="0" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -179,7 +173,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.NPR_Main">
@@ -537,7 +531,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33158997" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33158997" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -753,8 +747,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NPR/Assign1/NPR_Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="197" column="54" selection-start-line="197" selection-start-column="54" selection-end-line="197" selection-end-column="54" />
+        <state relative-caret-position="359">
+          <caret line="210" column="0" selection-start-line="210" selection-start-column="0" selection-end-line="210" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

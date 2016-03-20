@@ -193,16 +193,19 @@ public class NPR_Main {
 
         // calculating global simple similarity
         for(Map.Entry<Integer, NPR_Movie> entry : movies.entrySet()) {
+            int movieKey1 = 0;
+            int movieLastKey = movieKey.lastIndexOf(movieKey);
             for (Integer user : userList) {
 
-                for(int i=0; i < movieKey.size(); i++){
+                for(int i=0; i < movieLastKey; i++){
 
-                    int movieKey1 = movieKey.get(i);
+                    movieKey1 = movieKey.get(i);
 
                     if (movies.get(movieKey1).users.contains(user) && entry.getValue().users.contains(user))
                         entry.getValue().usrTotal++;
 
                     entry.getValue().similarity = entry.getValue().usrTotal / movies.get(movieKey1).users.size();
+
                 }
 
 
@@ -256,19 +259,6 @@ public class NPR_Main {
         topSimple.addAll(movieList);
         Collections.sort(movieList, NPR_Movie::advSort);
         topAdvanced.addAll(movieList);
-
-
-
-
-        for(int i=0, j=1; i< movieList.size()+1; i++, j++){
-
-
-
-
-        }
-
-
-
 
 
 
