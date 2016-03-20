@@ -12,39 +12,39 @@ import java.util.ArrayList;
 public class NPR_Movie implements Comparable<NPR_Movie> {
 
     int movieID;//, dampedFactor = 5;
-    Float dampedFactor = 5.0f;
-    Float totalRating, numRatings, stars, dampedRating;
+    Double dampedFactor = 5.0;
+    Double totalRating = 0.0, numRatings, movRating, dampedRating;
     String title;
     List<Integer> users = new ArrayList<>();
-    Float similarity = 0.0f, similarityADV = 0.0f, topRated = 0.0f, notSeen = 0.0f;
+    Double similarity = 0.0, similarityADV = 0.0, topRated = 0.0, notSeen = 0.0, usrTotal = 0.0;
 
     public NPR_Movie(int id, String title) {
         this.movieID = id;
         this.title = title;
-        this.totalRating = 0.0f;
-        this.numRatings = 0.0f;
-        this.stars = 0.0f;
-        this.dampedRating = 0.0f;
+        this.totalRating = 0.0;
+        this.numRatings = 0.0;
+        this.movRating = 0.0;
+        this.dampedRating = 0.0;
 
     }
 
     public int compareTo(NPR_Movie another) {
-        return Float.compare(another.stars, this.stars);
+        return Double.compare(another.movRating, this.movRating);
     }
 
     public int dampedSort(NPR_Movie another) {
-        return Float.compare(another.dampedRating, this.dampedRating);
+        return Double.compare(another.dampedRating, this.dampedRating);
     }
 
     public int simpleSort(NPR_Movie another) {
-        return Float.compare(another.similarity, this.similarity);
+        return Double.compare(another.similarity, this.similarity);
     }
 
     public int advSort(NPR_Movie another) {
-        return Float.compare(another.similarityADV, this.similarityADV);
+        return Double.compare(another.similarityADV, this.similarityADV);
     }
 
     public String toString(){
-        return "ID: " + movieID + "Title: " + title + "Rating: " + stars;
+        return "ID: " + movieID + "Title: " + title + "Rating: " + movRating;
     }
 }
