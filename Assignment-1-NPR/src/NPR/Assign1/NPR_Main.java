@@ -90,8 +90,8 @@ public class NPR_Main {
         DecimalFormat df = new DecimalFormat("#.###");
         df.setRoundingMode(RoundingMode.CEILING);
 
-        double totalRatingTest = 0.0;
-        double numRatingTest = 0.0;
+        double totalRating = 0.0;
+        double totalNumRating = 0.0;
 
         Map<Integer, NPR_Movie> movies = new HashMap();
         String inMovies = "ml-latest-small/movies.csv", inRatings = "ml-latest-small/ratings.csv",
@@ -130,8 +130,8 @@ public class NPR_Main {
                 userId = Integer.valueOf(userInfo[0]);
                 movieId = Integer.valueOf(userInfo[1]);
                 rating = Double.valueOf(userInfo[2]);
-                totalRatingTest = totalRatingTest + rating;
-                numRatingTest += 1.0;
+                totalRating = totalRating + rating;
+                totalNumRating += 1.0;
                 if(!userList.contains(userId)){
                     userList.add(userId);
                 }
@@ -140,13 +140,8 @@ public class NPR_Main {
 
                 item.totalRating += rating;
                 item.numRatings += 1.0;
-                //item.movRating = item.totalRating / item.numRatings;
                 item.movRating = rating;
 
-                //if (item.movRating != null) {
-                //    item.dampedRating = (item.totalRating + 3 * item.dampedFactor)
-                //            / (item.numRatings + item.dampedFactor);
-                //}
                 if (!item.users.contains(userId)) item.users.add(userId);
 
             }
@@ -165,35 +160,29 @@ public class NPR_Main {
         }
 
         // initializing global mean and total number of ratings
-        Double globalMean, totalRate = 0.0, globalMeanTest;
+        Double totalRate = 0.0, globalMean;
 
         for (Map.Entry<Integer, NPR_Movie> item : movies.entrySet()) {
             totalRate += item.getValue().movRating;
             numRating++;
         }
 
-        // calculation for global mean
-        globalMean = totalRate / numRating;
-
         // correct calculation for global mean
-        globalMeanTest = totalRatingTest / numRatingTest;
+        globalMean = totalRating / totalNumRating;
 
         // calculating the damped mean
         for (Map.Entry<Integer, NPR_Movie> item : movies.entrySet()) {
-            item.getValue().dampedRating = (item.getValue().totalRating + (globalMeanTest * item.getValue().dampedFactor));
+            item.getValue().dampedRating = (item.getValue().totalRating + (globalMean * item.getValue().dampedFactor));
             item.getValue().dampedRating = item.getValue().dampedRating / (item.getValue().numRatings
                     + item.getValue().dampedFactor);
         }
-          // calculation for damped mean
-//        for (Map.Entry<Integer, NPR_Movie> item : movies.entrySet()) {
-//            item.getValue().dampedRating = (item.getValue().totalRating + (globalMean * item.getValue().dampedFactor));
-//            item.getValue().dampedRating = item.getValue().dampedRating / (item.getValue().numRatings
-//                    + item.getValue().dampedFactor);
-//      }
 
+        
+        
         // calculating global simple similarity
+        // why won't you work!!!
         for(Map.Entry<Integer, NPR_Movie> entry : movies.entrySet()) {
-            int movieKey1 = 0;
+            int movieKey1;
             int movieLastKey = movieKey.lastIndexOf(movieKey);
             for (Integer user : userList) {
 
@@ -214,22 +203,6 @@ public class NPR_Main {
 
         }
 
-
-
-
-
-
-
-        // calculation for simple similarity to movie 260 (Starwars)
-        //for(Map.Entry<Integer, NPR_Movie> entry : movies.entrySet()){
-        //    for(Integer user : userList){
-        //        if(movies.get(260).users.contains(user) && entry.getValue().users.contains(user))
-        //           entry.getValue().topRated++;
-        //    }
-        //   entry.getValue().similarity = entry.getValue().topRated / movies.get(260).users.size();
-        //}
-
-
         for(Map.Entry<Integer, NPR_Movie> entry : movies.entrySet()){
             for(Integer user : userList){
                 if(entry.getValue().users.size() > 10) {
@@ -241,9 +214,7 @@ public class NPR_Main {
             entry.getValue().similarityADV = entry.getValue().similarity/(1-entry.getValue().similarity/(userList.size()-movies.get(153).users.size()));
             if(Double.isNaN(entry.getValue().similarityADV))
                 entry.getValue().similarityADV = 0.0;
-//            entry.getValue().similarityADV = entry.getValue().similarity/(entry.getValue().notSeen/(userList.size()-movies.get(153).users.size()));
-//            if(Double.isNaN(entry.getValue().similarityADV))
-//                entry.getValue().similarityADV = 0.0;
+
         }
 
         List<NPR_Movie> movieList = new ArrayList<>(movies.values());
@@ -266,12 +237,11 @@ public class NPR_Main {
 
 
         out.println(userList.size());
-        out.println("Global Mean: " + df.format(globalMean));
-        out.println("Global Mean Test: " + df.format(globalMeanTest));
+        out.println("Global Mean Test: " + df.format(globalMean));
         out.println("Total Rating: " + df.format(totalRate));
-        out.println("Total Rating Test: " + df.format(totalRatingTest));
+        out.println("Total Rating Test: " + df.format(totalRating));
         out.println("Number of Ratings: " + df.format(numRating));
-        out.println("Number of RatingsTest: " + df.format(numRatingTest));
+        out.println("Number of RatingsTest: " + df.format(totalNumRating));
         out.println("Movie 1172 Damped " + df.format(movies.get(1172).dampedRating));
         out.println(df.format(movies.get(480).similarity));
         out.println(df.format(movies.get(257).similarityADV));

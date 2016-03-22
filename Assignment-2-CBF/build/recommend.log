@@ -1,0 +1,17 @@
+21:47:46.596 INFO [main] org.lenskit.cli.Main: Starting LensKit 3.0-T3 on Java 1.8.0_73 from Oracle Corporation
+21:47:46.612 DEBUG [main] org.lenskit.LenskitInfo: have 4912 active revisions
+21:47:46.615 DEBUG [main] org.lenskit.cli.Main: Built from Git revision efe68ab5f268cbe9210c225a105f04f90556b08f
+21:47:46.615 DEBUG [main] org.lenskit.cli.Main: Using VM 'Java HotSpot(TM) 64-Bit Server VM' version 25.73-b02 from Oracle Corporation
+21:47:46.615 INFO [main] org.lenskit.cli.Main: Have 8 processors and heap limit of 3630 MiB
+21:47:46.624 INFO [main] org.lenskit.cli.util.RecommenderLoader: creating fresh recommender
+21:47:46.765 ERROR [main] org.lenskit.cli.Main: error running command: java.io.FileNotFoundException: C:\Users\noggleBase\Documents\GitHub\Recommender-Systems\Assignment-2-CBF\etc\user-user.groovy (C:\Users\noggleBase\Documents\GitHub\Recommender-Systems\Assignment-2-CBF\etc\user-user.groovy)
+java.io.FileNotFoundException: C:\Users\noggleBase\Documents\GitHub\Recommender-Systems\Assignment-2-CBF\etc\user-user.groovy (C:\Users\noggleBase\Documents\GitHub\Recommender-Systems\Assignment-2-CBF\etc\user-user.groovy)
+	at groovy.lang.GroovyCodeSource.<init>(GroovyCodeSource.java:106) ~[groovy-all-2.3.10.jar:2.3.10]
+	at groovy.lang.GroovyCodeSource.<init>(GroovyCodeSource.java:158) ~[groovy-all-2.3.10.jar:2.3.10]
+	at org.lenskit.config.ConfigurationLoader.loadScript(ConfigurationLoader.java:140) ~[lenskit-groovy-3.0-T3.jar:na]
+	at org.lenskit.config.ConfigurationLoader.load(ConfigurationLoader.java:108) ~[lenskit-groovy-3.0-T3.jar:na]
+	at org.lenskit.cli.util.ScriptEnvironment.loadConfigurations(ScriptEnvironment.java:153) ~[lenskit-cli-3.0-T3.jar:na]
+	at org.lenskit.cli.util.RecommenderLoader.loadEngine(RecommenderLoader.java:81) ~[lenskit-cli-3.0-T3.jar:na]
+	at org.lenskit.cli.commands.Recommend.execute(Recommend.java:67) ~[lenskit-cli-3.0-T3.jar:na]
+	at org.lenskit.cli.Main.main(Main.java:73) ~[lenskit-cli-3.0-T3.jar:na]
+	at org.grouplens.lenskit.cli.Main.main(Main.java:31) [lenskit-cli-3.0-T3.jar:na]
