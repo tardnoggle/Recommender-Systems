@@ -40,6 +40,14 @@ public class ThresholdUserProfileBuilder implements UserProfileBuilder {
             // unrating an item
             if (r.hasValue() && r.getValue() >= RATING_THRESHOLD) {
                 // TODO Get this item's vector and add it to the user's profile
+
+                for (Map.Entry<Long, Double> entry : model.getItemVector(r.getItemId()).entrySet()) {
+                    Double itemVector = entry.getValue();
+                    if (profile.containsKey(entry.getKey())) {
+                        itemVector += profile.get(entry.getKey());
+                    }
+                    profile.put(entry.getKey(), itemVector);
+                }
             }
         }
 

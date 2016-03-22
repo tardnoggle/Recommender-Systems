@@ -16,6 +16,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import static org.lenskit.util.math.Vectors.dotProduct;
+import static org.lenskit.util.math.Vectors.euclideanNorm;
+
 /**
  * @author <a href="http://www.grouplens.org">GroupLens Research</a>
  */
@@ -68,10 +71,13 @@ public class TFIDFItemScorer extends AbstractItemScorer {
             Long2DoubleMap iv = model.getItemVector(item);
 
             // TODO Compute the cosine of this item and the user's profile, store it in the output list
+            Double cosine = dotProduct(userVector, iv) / (euclideanNorm(userVector) * euclideanNorm(iv));
+            Rating eNorm = Rating.create(user, item, cosine);
+            ratings.add(eNorm);
             // TODO And remove this exception to say you've implemented it
             // If the denominator of the cosine similarity is 0, skip the item
             // HINT Take a look at the Vectors class in org.lenskit.util.math.
-            throw new UnsupportedOperationException("stub implementation");
+            //[removed]throw new UnsupportedOperationException("stub implementation");
         }
 
         return Results.newResultMap(results);

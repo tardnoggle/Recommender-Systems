@@ -9,6 +9,7 @@ import org.lenskit.util.collections.LongUtils;
 
 import javax.annotation.Nonnull;
 import javax.inject.Inject;
+import java.util.Map;
 
 /**
  * Build a user profile from all positive ratings.
@@ -29,11 +30,30 @@ public class WeightedUserProfileBuilder implements UserProfileBuilder {
         // Create a new vector over tags to accumulate the user profile
         Long2DoubleMap profile = new Long2DoubleOpenHashMap();
 
-        Long2DoubleMap ratings = Ratings.userRatingVector(history);
-
         // TODO Normalize the user's ratings
+        double mean = 0;
+        int count = 0;
+        for (Rating r: history) {
+            if (r.hasValue()) {
+                mean += r.getValue();
+                ++count;
+            }
+        }
+        mean = mean / count;
+
         // TODO Build the user's weighted profile
 
+        for (Rating r: history) {
+            if (r.hasValue()) {
+                for (Map.Entry<Long, Double> entry : model.getItemVector(r.getItemId()).entrySet()) {
+                    Double newValue = entry.getValue() * (r.getValue() - mean);
+                    if (profile.containsKey(entry.getKey())) {
+                        newValue += profile.get(entry.getKey());
+                    }
+                    profile.put(entry.getKey(), newValue);
+                }
+            }
+        }
         // The profile is accumulated, return it.
         // It is good practice to return a frozen vector.
         return LongUtils.frozenMap(profile);

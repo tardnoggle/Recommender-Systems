@@ -118,6 +118,12 @@ public class TFIDFModelBuilder implements Provider<TFIDFModel> {
             Long2DoubleMap tv = new Long2DoubleOpenHashMap(entry.getValue());
 
             // TODO Convert this map (vector) to a TF-IDF vector
+            LongSet tags = entry.getValue().keySet();
+
+            for (Long tag : tags){
+                Double TFIDF = tv.get(tag) * docFreq.get(tag);
+                tv.put(tag, TFIDF);
+            }
 
 
             // TODO Normalize the TF-IDF vector to be a unit vector
