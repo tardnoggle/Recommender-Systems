@@ -1,0 +1,27 @@
+{
+  "name" : "crossfold.4",
+  "trainSource" : {
+    "@class" : "org.lenskit.specs.data.PackedDataSourceSpec",
+    "name" : "part05.train.pack",
+    "file" : "C:\\Users\\noggleBase\\Desktop\\eval-assignment\\build\\crossfold.out\\part05.train.pack",
+    "domain" : {
+      "minimum" : 0.5,
+      "maximum" : 5.0,
+      "precision" : 0.5
+    }
+  },
+  "testSource" : {
+    "@class" : "org.lenskit.specs.data.PackedDataSourceSpec",
+    "name" : "part05.test.pack",
+    "file" : "C:\\Users\\noggleBase\\Desktop\\eval-assignment\\build\\crossfold.out\\part05.test.pack",
+    "domain" : {
+      "minimum" : 0.5,
+      "maximum" : 5.0,
+      "precision" : 0.5
+    }
+  },
+  "attributes" : {
+    "DataSet" : "crossfold",
+    "Partition" : 4
+  }
+}

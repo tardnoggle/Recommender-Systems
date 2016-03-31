@@ -1,0 +1,29 @@
+{
+  "name" : "crossfold",
+  "source" : {
+    "@class" : "org.lenskit.specs.data.TextDataSourceSpec",
+    "name" : "ratings.csv",
+    "file" : "data\\ratings.csv",
+    "delimiter" : ",",
+    "domain" : {
+      "minimum" : 0.5,
+      "maximum" : 5.0,
+      "precision" : 0.5
+    },
+    "builderType" : "rating",
+    "fields" : null,
+    "itemFile" : null,
+    "itemNameFile" : null
+  },
+  "partitionCount" : 5,
+  "method" : "PARTITION_USERS",
+  "userPartitionMethod" : {
+    "type" : "holdout",
+    "order" : "random",
+    "count" : 5
+  },
+  "sampleSize" : null,
+  "includeTimestamps" : true,
+  "outputFormat" : "PACK",
+  "outputDir" : null
+}

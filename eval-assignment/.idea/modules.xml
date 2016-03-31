@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eval-assignment.iml" filepath="$PROJECT_DIR$/.idea/modules/eval-assignment.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eval-assignment_main.iml" filepath="$PROJECT_DIR$/.idea/modules/eval-assignment_main.iml" group="eval-assignment" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/eval-assignment_test.iml" filepath="$PROJECT_DIR$/.idea/modules/eval-assignment_test.iml" group="eval-assignment" />
+    </modules>
+  </component>
+</project>
